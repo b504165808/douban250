@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>豆瓣图书/top250</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script src="/static/js_files/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/static/css_files/bootstrap.min.css">
+</head>
+<body>
+<h1>豆瓣读书 Top 250</h1>
+    {%for book_data in douban_data%}
+    <table width="100%">
+        <tbody><tr class="item">
+          <td width="100" valign="top">
+            <a class="nbg" href="{{book_data.book_link}}">
+              <img src="{{book_data.book_img_link}}" width="90">
+            </a>
+          </td>
+          <td valign="top">
+
+            <div class="pl2">
+
+
+              <a href="{{book_data.book_link}}" title="{{book_data.book_title}}">
+                {{book_data.book_title}}
+
+
+              </a>
+
+
+
+                &nbsp;
+
+
+            </div>
+
+              <p class="pl">{{book_data.book_info}}</p>
+
+
+
+
+              <div class="star clearfix">
+                  <span class="allstar50"></span>
+                  <span class="rating_nums">9.6</span>
+
+                <span class="pl">(
+                    {{book_data.book_comments_num}}人评价
+                )</span>
+              </div>
+
+
+
+          </td>
+        </tr>
+      </tbody></table>
+    {%endfor%}
+
+    <nav aria-label="Page navigation">
+  <ul class="pagination">
+    <li>
+      <a href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li><a href="/top250?page=1">1</a></li>
+    <li><a href="/top250?page=2">2</a></li>
+    <li><a href="/top250?page=3">3</a></li>
+    <li><a href="/top250?page=4">4</a></li>
+    <li><a href="/top250?page=5">5</a></li>
+      <li><a href="/top250?page=6">6</a></li>
+      <li><a href="/top250?page=7">7</a></li>
+      <li><a href="/top250?page=8">8</a></li>
+      <li><a href="/top250?page=9">9</a></li>
+      <li><a href="/top250?page=10">10</a></li>
+    <li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+</body>
+</html>
